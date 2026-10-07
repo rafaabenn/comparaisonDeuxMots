@@ -36,7 +36,8 @@ bool chargerFichier(const string& nomFichier, vector<string>& mots) {
     return true;
 }
 
-// Recherche 1 : mot exact, on regarde chaque mot un par un     O(n)
+// Recherche 1 : mot exact, on regarde chaque mot un par un O(n)
+//regarder tous les mots
 int compterMotExact(const vector<string>& mots, const string& cherche) {
     int compteur = 0;
     for (size_t i = 0; i < mots.size(); i++) {
@@ -45,7 +46,7 @@ int compterMotExact(const vector<string>& mots, const string& cherche) {
     return compteur;
 }
 
-// Recherche 2 : mot exact, par dichotomie (tableau trié)        O(log n)
+// Recherche 2 : mot exact, par dichotomie (tableau trié) O(log n)
 // Renvoie 1 si trouvé, 0 sinon
 int rechercheDichotomique(const vector<string>& motsTries, const string& cherche) {
     int gauche = 0;
@@ -65,6 +66,7 @@ int rechercheDichotomique(const vector<string>& motsTries, const string& cherche
 int compterSousChaine(const vector<string>& mots, const string& cherche) {
     int compteur = 0;
     for (size_t i = 0; i < mots.size(); i++) {
+        //find renvoie la position ou on le trouve
         if (mots[i].find(cherche) != string::npos) compteur++;
     }
     return compteur;
