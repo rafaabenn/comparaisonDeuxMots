@@ -27,3 +27,16 @@ en mesurant le temps de chacune :
 ```
 g++ RechercheFichier/RechercheDansFichier.cpp -o recherche
 ```
+
+## ComparaisonFind
+
+`RechercheAvecSansFind.cpp` : compte les mots d'un fichier qui contiennent un mot (lettres collées),
+avec `string::find` puis avec deux boucles écrites à la main, et compare les temps d'exécution.
+
+`GenererFichier.cpp` crée le fichier de test (par exemple 10 000 000 de chaînes dans `texte_10M.txt`, 160 Mo,
+non versionné).
+
+```
+g++ -O2 ComparaisonFind/GenererFichier.cpp -o generer
+g++ -O2 ComparaisonFind/RechercheAvecSansFind.cpp -o avecSansFind
+```
